@@ -12,7 +12,14 @@ Feature: Serverbased Autorebalancing Bot based on a set of Indicators
         When I check for <endpoint>
         Then I receive historical <data>
     Examples: 
-        | endpoint      | data                                     |
-        | balance       | datetimes, usd- and crypto-balances      |
-        | actions       | datetimes, crypto amount and price       |
-        | transactions  | datetimes, price, crypto- and usd-amount |
+        | endpoint      | data            |
+        | balance       | datetimes       |
+        | balance       | usd-balances    |
+        | balance       | crypto-balances |
+        | actions       | datetimes       |
+        | actions       | crypto-amounts  |
+        | actions       | prices          |
+        | transactions  | datetimes       |
+        | transactions  | prices          |
+        | transactions  | crypto-amount   |
+        | transactions  | usd-amount      |
