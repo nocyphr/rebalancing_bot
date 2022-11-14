@@ -7,6 +7,9 @@
 ### ToDo
 - [x] rewrite Account feature file
 - [ ] write Account API
+    - [x] write step definitions
+    - [ ] make them pass
+    - [ ] add unit tests if necessary
 - [ ] write CRUD Module for DB
 - [ ] Setup Account DB
 - [ ] rewrite Timer feature file
