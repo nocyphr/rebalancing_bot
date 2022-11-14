@@ -8,7 +8,7 @@ Feature: Serverbased Autorebalancing Bot based on a set of Indicators
         Given an API
         And an API key
 
-    Scenario: Getting historical data from API
+    Scenario Outline: Getting historical data from API
         When I check for <endpoint>
         Then I receive historical <data>
     Examples: 
