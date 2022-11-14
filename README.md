@@ -16,3 +16,9 @@
 - [ ] write Data API
 - [ ] setup Data DB
 - [ ] write Datasource Code
+
+### Run tests
+- run uvicorn main:app --reload
+- run pipenv shell
+- run behave
+- run pytest
