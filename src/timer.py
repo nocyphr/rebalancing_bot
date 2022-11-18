@@ -1,7 +1,10 @@
 from decimal import Decimal
 
 
-
+def __convert_to_decimals(number):
+    stringified_number = str(number)
+    decimal_number = Decimal(stringified_number)
+    return decimal_number
 
 def calculate_crypto_valuation(crypto_balance, crypto_price):
     # to decimal to prevent rounding errors
@@ -23,19 +26,3 @@ def calculate_delta(fiat_value, crypto_value):
         return [abs(half_delta), half_delta]
     return [half_delta * (-1), half_delta]
 
-
-
-
-
-
-
-
-
-
-
-
-
-def __convert_to_decimals(number):
-    stringified_number = str(number)
-    decimal_number = Decimal(stringified_number)
-    return decimal_number
