@@ -1,0 +1,4 @@
+this module should
+- buy 
+- sell
+- calculate the cheapest path to take (Dijkstra)

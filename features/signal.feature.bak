@@ -1,0 +1,4 @@
+this module should 
+- load the indicator plugin
+- calculate indicator signal
+- call the trade module

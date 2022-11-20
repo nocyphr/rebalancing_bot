@@ -9,10 +9,10 @@ list_parameters_valuation = [
   (16518.12, 19.0, 313844.28),
   (225460.5, 15.165, 3419108.4825),
 ]
-@pytest.mark.parametrize('crypto_price, crypto_balance, expected', list_parameters_valuation)
-def test_that_crypto_valuation_is_calculated(crypto_price, crypto_balance, expected): 
+@pytest.mark.parametrize('price_in_usdt, balance, expected', list_parameters_valuation)
+def test_that_currency_valuation_is_calculated(price_in_usdt, balance, expected): 
     # Act
-    result = calculate_crypto_valuation(crypto_balance, crypto_price)
+    result = valuate_currency_in_usdt(balance, price_in_usdt)
 
     # Assert
     assert_that(result).is_equal_to(expected)
@@ -21,16 +21,22 @@ list_parameters_delta = [
     (500, 578.238, [39.119, -39.119]),
     (578.238, 500, [-39.119, 39.119]), 
 ]
-@pytest.mark.parametrize('fiat_value, crypto_value, expected', list_parameters_delta)
-def test_(fiat_value, crypto_value, expected):
+@pytest.mark.parametrize('value_base_currency, value_quote_currency, expected', list_parameters_delta)
+def test_that_positions_are_correctly_calculated(value_base_currency, value_quote_currency, expected):
     # Act
-    result = calculate_delta(fiat_value, crypto_value)
+    list_of_positions = calculate_positions(value_base_currency, value_quote_currency)
+
+    # Assert
+    assert_that(list_of_positions).is_equal_to(expected)
+
+list_parameters_delta = [
+    (15, 39.119, True),
+    (19, 9.119, False),
+]
+@pytest.mark.parametrize('min_delta, position, expected', list_parameters_delta)
+def test_that(min_delta, position, expected):
+    # Act
+    result = check_delta_is_valid(min_delta, position)
 
     # Assert
     assert_that(result).is_equal_to(expected)
-
-
-
-
-# better var names
-# <data_type>_<contents_used>_<for>
